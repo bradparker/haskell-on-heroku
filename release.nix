@@ -6,6 +6,7 @@ in
   , dockerTools ? nixpkgs.dockerTools
   , haskell ? nixpkgs.haskell
   , lib ? nixpkgs.lib
+  , name
   , ...
   }:
   let
@@ -16,7 +17,7 @@ in
     ]);
   in
     nixpkgs.dockerTools.buildImage {
-      name = package.pname;
+      name = name;
       tag = "latest";
       contents = [
         busybox
