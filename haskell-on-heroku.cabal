@@ -1,0 +1,12 @@
+cabal-version:       2.4
+name:                haskell-on-heroku
+version:             0.1.0.0
+license:             BSD-3-Clause
+author:              Brad Parker
+maintainer:          hi@bradparker.com
+build-type:          Simple
+
+executable haskell-on-heroku
+  main-is:             Main.hs
+  build-depends:       base >=4.12 && <4.13
+  default-language:    Haskell2010
