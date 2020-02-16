@@ -9,4 +9,6 @@ build-type:          Simple
 executable haskell-on-heroku
   main-is:             Main.hs
   build-depends:       base >=4.12 && <4.13
+                     , servant-server
+                     , warp
   default-language:    Haskell2010
