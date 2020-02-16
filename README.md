@@ -8,7 +8,7 @@ Ensure you have [Nix](https://nixos.org/nix) installed and run:
 $ nix-shell --run "cabal new-run"
 ```
 
-To see it in action.
+You should now have a pretty great web site running. Point a web browser at [http://localhost:8000/hello/world](http://localhost:8000/hello/world) to see it.
 
 ## Deployment
 
