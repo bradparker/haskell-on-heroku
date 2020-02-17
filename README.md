@@ -5,7 +5,7 @@
 Ensure you have [Nix](https://nixos.org/nix) installed and run:
 
 ```
-$ nix-shell --run "cabal new-run"
+$ nix-shell -A env --command "runhaskell Main.hs"
 ```
 
 You should now have a pretty great web site running. Point a web browser at [http://localhost:8000/hello/world](http://localhost:8000/hello/world) to see it.
@@ -27,7 +27,7 @@ You should now have a pretty great web site running. Point a web browser at [htt
 4. Run the deploy script with your Heroku App name.
 
   ```
-  $ bin/deploy infinite-anchorage-09330
+  $ ./deploy infinite-anchorage-09330
   ```
 
 5. Open a browser and see it in action.

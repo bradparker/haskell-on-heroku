@@ -1,27 +1,19 @@
-{ name
-, nixpkgs ? import ./nix/nixpkgs.nix
+{ nixpkgs ? import ./nixpkgs.nix {}
 }:
 let
   inherit (nixpkgs)
-    busybox
     callPackage
     dockerTools
-    haskell
-    lib;
+    busybox;
 
-  package = lib.pipe
-    (callPackage ./. {})
-    (with haskell.lib; [
-      dontCheck
-      justStaticExecutables
-    ]);
+  package = callPackage ./. {};
 in
   dockerTools.buildImage {
-    name = name;
+    name = "haskell-on-heroku";
     tag = "latest";
     contents = [
-      busybox
       package
+      busybox
     ];
     config = {
       Cmd = ["/bin/${package.pname}"];
